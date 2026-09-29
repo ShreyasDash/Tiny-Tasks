@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f4">
+    <title>Tiny Tasks — make room for what matters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Tiny Tasks home"><span class="brand-mark">✳</span><span>tiny<span
+                class="brand-light">tasks</span></span></a>
+        <div class="sidebar-label">WORKSPACE</div>
+        <button class="nav-item active"><span class="nav-icon">▦</span> My tasks <span class="nav-count" id="nav-count">0</span>
+        </button>
+        <div class="sidebar-label list-label">YOUR LISTS
+            <button id="new-list" title="Add a list">＋</button>
+        </div>
+        <button class="nav-item list-nav active"><span class="list-dot mint"></span> Personal</button>
+        <button class="nav-item list-nav"><span class="list-dot lilac"></span> Work</button>
+        <button class="nav-item list-nav"><span class="list-dot peach"></span> Ideas</button>
+        <div class="sidebar-bottom">
+            <div class="avatar">S</div>
+            <div><strong>Shreyas</strong><span>Free plan</span></div>
+            <button class="more" aria-label="More options">···</button>
+        </div>
+    </aside>
+
+    <main class="main-area">
+        <header class="topbar">
+            <div class="breadcrumb">Workspace <span>/</span> <strong>Personal</strong></div>
+            <div class="top-actions">
+                <button class="icon-button" title="Search" aria-label="Search">⌕</button>
+                <button class="icon-button bell" title="Notifications" aria-label="Notifications">♧<i></i></button>
+                <div class="top-avatar">S</div>
+            </div>
+        </header>
+        <section class="content">
+            <div class="welcome-row">
+                <div>
+                    <div class="eyebrow"><span class="sun">☀</span> YOUR PERSONAL SPACE</div>
+                    <h1>Make room for<br><span>what matters.</span></h1>
+                    <p class="subtitle">A little progress adds up. What’s on your mind?</p></div>
+                <div class="date-card"><span class="date-icon">✳</span>
+                    <div><strong id="today-date">Today</strong><span id="date-sub">A fresh start</span></div>
+                </div>
+            </div>
+            <section class="composer-card">
+                <div class="composer-icon">＋</div>
+                <form id="task-form"><label for="task-input">Add a task</label>
+                    <div class="input-row"><input id="task-input" type="text"
+                                                  placeholder="e.g. Pick up something nice for the weekend"
+                                                  autocomplete="off" maxlength="120">
+                        <button type="submit">Add task <span>↗</span></button>
+                    </div>
+                </form>
+                <div class="composer-hint"><span>↵</span> Press enter to add <span class="hint-dot">·</span> Keep it
+                    small, keep it moving
+                </div>
+            </section>
+            <section class="task-section">
+                <div class="section-heading">
+                    <div><h2>Your tasks <span id="task-total">0</span></h2>
+                        <p id="section-subtitle">One thing at a time.</p></div>
+                    <div class="filters" role="tablist" aria-label="Filter tasks">
+                        <button class="filter active" data-filter="all" role="tab">All <span id="all-count">0</span>
+                        </button>
+                        <button class="filter" data-filter="active" role="tab">To do <span id="active-count">0</span>
+                        </button>
+                        <button class="filter" data-filter="done" role="tab">Done</button>
+                    </div>
+                </div>
+                <div id="task-list" class="task-list" aria-live="polite"></div>
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-art"><span class="spark spark-a">✦</span><span class="empty-check">✓</span><span
+                            class="spark spark-b">✳</span></div>
+                    <h3>Nothing on your plate</h3>
+                    <p>Enjoy the breathing room, or add a task above to get started.</p></div>
+            </section>
+            <div class="bottom-note"><span>✳</span> Small steps still move you forward.</div>
+        </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+</div>
+</body>
+</html>
